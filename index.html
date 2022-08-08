@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Program Horoskop</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Program Horoskop</h1>
+            <p>By : Ayom W</p>
+        </div>
+        <div class="bigBox">
+
+            <div class="header">
+                <h1>Your Lucky Today?</h1>
+            </div>
+            <div id="btn" class="btn">
+                <p>Click Here</p>
+            </div>
+
+            <div id="boxResult" class="result">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        const boxResult = document.getElementById('boxResult');
+
+
+
+
+        function getResult() {
+            let randomNumber = Date.now();
+            if (randomNumber % 3 == 0) return "Mengerikan";
+            if (randomNumber % 2 == 1) return "Hebat!!";
+            if (randomNumber % 2 == 0) return "boleh juga";
+
+        }
+
+
+        btn.addEventListener("click", () => {
+            const hasil = document.createElement('p');
+
+            hasil.innerHTML = getResult();
+
+            boxResult.append(hasil);
+
+        });
+    </script>
+</body>
+
+</html>
